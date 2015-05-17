@@ -8,7 +8,8 @@ public class ResetBtn : MonoBehaviour {
 //------------------
 // Member variable
 //------------------
-	
+	public string sceneName;
+
 //------------------
 // Member method
 //------------------
@@ -18,7 +19,7 @@ public class ResetBtn : MonoBehaviour {
 	//=======================================================
 	void OnGUI () {
 		if (GUI.Button (new Rect(Screen.width - Screen.width / 4, 0, Screen.width / 4, Screen.height / 8), "Reset")) {
-			GameObject.FindGameObjectWithTag("GameController").SendMessage("Restart");
+			Application.LoadLevel(sceneName);
 		}
 	}
 }
